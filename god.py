@@ -29,9 +29,9 @@ def wordphrasesend(word):
 
 def Keys_handle(key):
     if key == Key.f6:
-        wordphrasesend(godword(word))
+        wordphrasesend(godword('phrase'))
     elif key == Key.f7:
-        wordphrasesend(godword(word))
+        wordphrasesend(godword('word'))
 
     
 
