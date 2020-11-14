@@ -17,6 +17,7 @@ def godword(setting):
 
 
 import random
+from pynput.keyboard import Listener, Key
 
 
 def wordphrasesend(word):
@@ -26,18 +27,13 @@ def wordphrasesend(word):
     word)
 
 
+def Keys_handle(key):
+    if key == Key.f6:
+        wordphrasesend(godword(word))
+    elif key == Key.f7:
+        wordphrasesend(godword(word))
 
-
-import keyboard
-
-
-while True:
-    if keyboard.is_pressed('F7'):
-        wordphrasesend(godword("word"))
-        print('word sent')
-
-    if keyboard.is_pressed('F6'):
-        wordphrasesend(godword('phrase'))
-        print('phrase sent')
     
 
+with Listener(on_press=Keys_handle) as listener:
+    listener.join()
